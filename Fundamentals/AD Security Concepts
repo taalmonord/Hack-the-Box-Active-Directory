@@ -1,21 +1,36 @@
+[Home](https://github.com/taalmonord/Hack-the-Box-Active-Directory) > [Fundamentals](./) > AD Security Concepts
+
 # Active Directory Security Concepts
+*An overview of the fundamental security principles and common attack vectors within a Windows Domain environment.*
 
-## Authentication vs Authorization
+---
 
-- Authentication: Verifying identity
-- Authorization: Granting access
+## Preface
+Securing an Active Directory environment requires a deep understanding of the relationship between identity verification and resource access. This document outlines the core tenets of AD security and identifies the primary weaknesses often exploited by adversaries.
 
-## Principle of Least Privilege
-- Users should only have necessary permissions
+## Core Security Principles
 
-## Common Weaknesses
+### Authentication vs. Authorization
+Understanding the distinction between these two is the first step in access control:
+* **Authentication:** The process of verifying a user's identity (e.g., "Are you who you say you are?").
+* **Authorization:** The process of granting or denying access to specific resources (e.g., "Do you have permission to read this file?").
 
-- Misconfigured permissions
-- Weak password policies
-- Excessive trust relationships
-- Legacy protocols (NTLM)
+### Principle of Least Privilege (PoLP)
+A security concept where users are granted only the minimum levels of access—or permissions—needed to perform their job functions. This limits the "blast radius" if an account is compromised.
 
-## Attack Surface
+---
 
-- Users are the largest attack vector
-- Web apps and APIs also targeted
+## Vulnerabilities & Attack Surface
+
+### Common Weaknesses
+Adversaries often target misconfigurations rather than software bugs. Key areas of concern include:
+* **Misconfigured Permissions:** Over-privileged accounts or "Ghost" admins.
+* **Weak Password Policies:** Susceptibility to password spraying and brute force.
+* **Excessive Trust:** Improperly managed forest or domain trusts.
+* **Legacy Protocols:** Continued use of outdated protocols like **NTLM** or **LLMNR**.
+
+### The Human Element
+**Users remain the largest attack vector.** Phishing and social engineering are the primary methods for gaining an initial foothold in the network, which then leads to lateral movement and privilege escalation.
+
+## Conclusion
+A hardened Active Directory environment is one that assumes breach and focuses on minimizing the attack surface through strict identity management and modern protocol enforcement.
