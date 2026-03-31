@@ -1,0 +1,26 @@
+# Active Directory Architecture
+
+Active Directory is structured as a **hierarchical system**.
+
+## Forest
+- The highest level in AD
+- Contains multiple domains
+- Represents the security boundary
+
+## Domain
+- Logical grouping of objects
+- Contains:
+  - Users
+  - Computers
+  - Groups
+
+## Organizational Units (OUs)
+- Containers used to organize objects within a domain
+- Used for applying Group Policy
+
+## Example Concept
+
+Two forests can have a **bidirectional trust**, but:
+
+- Child domains inside each forest **do NOT automatically trust each other**
+- Additional trust relationships must be configured
