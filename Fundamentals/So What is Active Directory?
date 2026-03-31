@@ -1,0 +1,46 @@
+Active Directory (AD) is a directory service developed by Microsoft for managing Windows-based network environments.
+
+It is a **distributed, hierarchical system** that enables centralized management of:
+
+- Users
+- Computers
+- Groups
+- Network devices
+- File shares
+- Policies (Group Policy Objects)
+
+Almost **95% of Fortune 500 companies** use Active Directory, making it one of the most critical enterprise technologies.
+
+## Why Active Directory Matters
+
+- Centralized identity and access management
+- Scalable across large enterprise environments
+- Enables authentication and authorization
+- Integrates with multiple services and protocols
+
+## Security Consideration
+
+Despite its advantages, Active Directory is frequently targeted because:
+
+- Even **low-privileged users can enumerate the environment**
+- Misconfigurations can lead to full domain compromise
+
+---
+
+## Notable AD Attacks
+
+### 2021
+- **PrintNightmare**
+  - Remote Code Execution via Windows Print Spooler
+- **noPac**
+  - Domain privilege escalation from a standard user
+- **Shadow Credentials**
+  - Impersonation of users/computers
+
+### 2020
+- **ZeroLogon**
+  - Allowed attackers to impersonate domain controllers
+
+### 2018
+- **Printer Bug**
+  - Forced authentication via MS-RPRN RPC interface
