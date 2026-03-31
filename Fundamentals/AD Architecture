@@ -1,26 +1,39 @@
-# Active Directory Architecture
+[Home](https://github.com/taalmonord/Hack-the-Box-Active-Directory) > [Fundamentals](./) > AD Architecture
 
-Active Directory is structured as a **hierarchical system**.
+# Active Directory Architecture & Fundamentals
+*A comprehensive breakdown of the hierarchical structure and security boundaries within Windows Active Directory environments.*
 
-## Forest
-- The highest level in AD
-- Contains multiple domains
-- Represents the security boundary
+---
 
-## Domain
-- Logical grouping of objects
-- Contains:
-  - Users
-  - Computers
-  - Groups
+## Preface
+Active Directory (AD) serves as the backbone for identity and access management in enterprise environments. Understanding its logical structure—from individual objects to entire forests—is critical for both administration and security auditing. This documentation outlines the core components that define an AD ecosystem.
 
-## Organizational Units (OUs)
-- Containers used to organize objects within a domain
-- Used for applying Group Policy
+## Core Components
 
-## Example Concept
+### 1. The Forest
+The **Forest** is the highest level of the Active Directory hierarchy. It acts as the ultimate security boundary.
+* Contains one or more domain trees.
+* Shares a common schema (definitions of objects and attributes).
+* Shares a common configuration partition.
 
-Two forests can have a **bidirectional trust**, but:
+### 2. The Domain
+A **Domain** is a logical grouping of network objects, such as users, computers, and groups, that share a central directory database.
+* Acts as a management boundary for administrative tasks.
+* Requires at least one Domain Controller (DC) to function.
 
-- Child domains inside each forest **do NOT automatically trust each other**
-- Additional trust relationships must be configured
+### 3. Organizational Units (OUs)
+**OUs** are containers used to organize objects within a single domain. They are primarily used to:
+* Delegate administrative permissions (e.g., allowing a "HelpDesk" group to reset passwords).
+* Apply **Group Policy Objects (GPOs)** to specific subsets of users or machines.
+
+---
+
+## Security Concepts & Trust Relationships
+*How do different entities within the hierarchy interact?*
+
+In a standard deployment, two forests can establish a **bidirectional trust**. However, it is a common misconception that all sub-entities inherit this:
+- Child domains inside each forest **do NOT** automatically trust each other across forest boundaries.
+- These "Shortcuts" or additional trust relationships must be manually configured to allow cross-forest resource access.
+
+## Conclusion
+Mastering the architecture of Active Directory is the first step in identifying misconfigurations. By understanding how OUs and Domains interact, we can better visualize the attack surface and implement more effective hardening strategies.
