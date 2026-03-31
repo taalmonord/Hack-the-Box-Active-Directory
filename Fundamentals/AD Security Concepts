@@ -1,0 +1,21 @@
+# Active Directory Security Concepts
+
+## Authentication vs Authorization
+
+- Authentication: Verifying identity
+- Authorization: Granting access
+
+## Principle of Least Privilege
+- Users should only have necessary permissions
+
+## Common Weaknesses
+
+- Misconfigured permissions
+- Weak password policies
+- Excessive trust relationships
+- Legacy protocols (NTLM)
+
+## Attack Surface
+
+- Users are the largest attack vector
+- Web apps and APIs also targeted
