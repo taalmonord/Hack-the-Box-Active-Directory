@@ -1,0 +1,18 @@
+# MSRPC (Microsoft Remote Procedure Call)
+
+MSRPC is a framework that allows a program to request a service from a program located on another computer in a network without having to understand the network's details. In Active Directory, it is the primary engine for remote administration and communication.
+
+---
+
+###  Technical Specifications
+* **Default Port:** 135
+* **Function:** Facilitates inter-process communication (IPC) and service interaction across the network.
+
+###  Key Use Cases
+* **Remote Management:** Enables administrators to manage Windows systems and services remotely.
+* **Service Interaction:** Essential for the functioning of the Service Control Manager and Task Scheduler.
+* **Authentication Support:** Works alongside protocols like Netlogon to maintain secure channels between workstations and Domain Controllers.
+
+###  Security Considerations
+* **Enumeration:** Frequently targeted by attackers using tools like `rpcclient` to harvest user and group information without high-level privileges.
+* **Lateral Movement:** Often abused by tools such as `PsExec` or `Impacket` to execute commands on remote hosts once a foothold is established.
