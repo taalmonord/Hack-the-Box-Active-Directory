@@ -1,0 +1,20 @@
+# Kerberos Authentication
+
+Kerberos is the default authentication protocol for Windows Active Directory. It is a ticket-based, stateless protocol designed to provide strong authentication for client/server applications by using secret-key cryptography.
+
+---
+
+###  Technical Specifications
+* **Default Port:** 88 (TCP/UDP)
+* **Encryption:** Uses both symmetric and asymmetric cryptography to protect tickets.
+* **Mechanism:** Relies on a Key Distribution Center (KDC) to issue tickets.
+
+###  Key Components
+* **Ticket Granting Ticket (TGT):** Obtained after initial login; used to prove identity when requesting access to specific services.
+* **Service Tickets (TGS):** Specific tickets granted for accessing resources like file shares (SMB) or databases.
+* **KDC (Key Distribution Center):** The service (typically running on a Domain Controller) that manages the exchange of these tickets.
+
+###  Security Considerations
+* **Kerberoasting:** A common technique where attackers request service tickets for accounts with Service Principal Names (SPNs) and attempt to crack the passwords offline.
+* **Silver & Golden Tickets:** Attackers who compromise specific keys (like the `krbtgt` hash) can forge tickets to maintain persistent, high-level access to the domain.
+* **Ticketing Security:** Because it is ticket-based, Kerberos is significantly more secure than legacy NTLM as it does not send password hashes over the network during every request.
